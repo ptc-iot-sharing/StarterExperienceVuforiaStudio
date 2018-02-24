@@ -1,0 +1,57 @@
+{
+  "name": "StarterExperience",
+  "projectType": "AR",
+  "viewType": "ar",
+  "fileName": "StarterExperience",
+  "thingworxServer": "http://10.3.35.196:2019",
+  "mainNavigationMenuStyle": "leftSideMenu",
+  "mainNavigationMenuItems": [],
+  "theme": "twx-light",
+  "hideExperienceHeader": false,
+  "resourceDirectory": "src/phone/resources",
+  "version": "1.22.941",
+  "device": {
+    "name": "tablet",
+    "width": "1026px",
+    "height": "770px"
+  },
+  "state": {
+    "orientation": "landscape"
+  },
+  "targets": {
+    "phone": {
+      "components": [
+        {
+          "name": "Home",
+          "fileName": "Home",
+          "showInMainMenu": true,
+          "viewType": "ar",
+          "title": "Home"
+        }
+      ],
+      "images": []
+    },
+    "shared": {
+      "components": [
+        {
+          "name": "Data",
+          "fileName": "Data"
+        }
+      ],
+      "images": [],
+      "styles": [
+        {
+          "name": "App",
+          "fileName": "App",
+          "fileExt": "scss"
+        }
+      ]
+    }
+  },
+  "previewUrl": "http://localhost:3000/preview.html?project=${project}&format=${format}&orientation=${orientation}&phone=true",
+  "resourceRuntimeDir": "app/resources",
+  "fontRuntimeDir": "../fonts",
+  "fontDesigntimeDir": "../dist/phone/fonts",
+  "allowSelfSignedCerts": true,
+  "thumbnail": "Uploaded/startKit.png"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "requires": [
+    "w320dp"
+  ],
+  "experiences": [
+    {
+      "vumark": "526:20",
+      "index-keys": [
+        "urn:vuforia:vumark:526:20"
+      ],
+      "title": {
+        "en": "Fan Demo 2"
+      },
+      "description": {
+        "en": "",
+        "en-US": ""
+      },
+      "requires": [
+        "AR-tracking"
+      ],
+      "tags": [],
+      "icon": "",
+      "viewName": "Home",
+      "url-template": "index.html?expIndex=0#/Home?thing={{thingworx:thing}}&vumark={{vuforia:vumark}}",
+      "thumbnail": "public/Uploaded/startKit.png",
+      "experienceType": "vumark"
+    }
+  ],
+  "accessType": "public",
+  "designedfor": []
+}

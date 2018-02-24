@@ -1,0 +1,565 @@
+{
+  "attributes": {
+    "twx-widget": "",
+    "widget-id": "view-1",
+    "viewtype": "ar",
+    "widget-name": "view-1",
+    "is-widget-container": "true"
+  },
+  "children": [{
+    "name": "twx-container-content",
+    "children": [{
+      "attributes": {
+        "twx-widget": "",
+        "widget-id": "x-79444e8f-5edd-45d3-aea4-c6f233eda06d",
+        "camera": "{\"metadata\":{\"version\":4.4,\"type\":\"Object\",\"generator\":\"Object3D.toJSON\"},\"object\":{\"uuid\":\"979BF558-C862-4A40-8EC0-70681B12F88C\",\"type\":\"PerspectiveCamera\",\"matrix\":[0.2691817879676819,-3.267235648696243e-10,-0.9630894064903259,0,-0.28219544887542725,0.9561091661453247,-0.07887313514947891,0,0.9208184480667114,0.2930106222629547,0.25736716389656067,0,7.035751819610596,2.238823413848877,1.9664802551269531,1],\"fov\":20,\"zoom\":1,\"near\":0.01,\"far\":20000,\"focus\":10,\"aspect\":1.395869191049914,\"filmGauge\":35,\"filmOffset\":0}}",
+        "widget-name": "3D Container",
+        "is-widget-container": "true"
+      },
+      "name": "twx-dt-view",
+      "children": [{
+        "name": "twx-container-content",
+        "children": [{
+          "attributes": {
+            "twx-widget": "",
+            "widget-id": "model-1",
+            "src": "Uploaded/shell.pvz",
+            "scale": "1.2500",
+            "x": "0.2794",
+            "y": "0.1880",
+            "z": "0.1537",
+            "ry": "90",
+            "widget-name": "model-1"
+          },
+          "name": "twx-dt-model",
+          "children": [{
+            "attributes": {
+              "databind-id": "db-1517223982150",
+              "source-type": "ui",
+              "source-label": "Slider",
+              "source-name": "slider-2",
+              "source-item-type": "property",
+              "source-item-name": "value",
+              "binding-type": "widget_property",
+              "from-expression": "app.view['Home'].wdg['slider-2']['value']",
+              "to-property": "scale"
+            },
+            "name": "twx-databind"
+          }, {
+            "attributes": {
+              "databind-id": "db-1517224249978",
+              "source-type": "ui",
+              "source-label": "Slider",
+              "source-name": "slider-1",
+              "source-item-type": "property",
+              "source-item-name": "value",
+              "binding-type": "widget_property",
+              "from-expression": "app.view['Home'].wdg['slider-1']['value']",
+              "to-property": "ry"
+            },
+            "name": "twx-databind"
+          }]
+        }, {
+          "attributes": {
+            "twx-widget": "",
+            "widget-id": "thingMark-1",
+            "marker-id": "526:20",
+            "width": "0.0508",
+            "x": "0.420",
+            "y": "0.285",
+            "z": "0.178",
+            "rx": "180.00",
+            "ry": "90.00",
+            "rz": "180.00",
+            "istracked": "true",
+            "tracking-indicator": "true",
+            "widget-name": "thingMark-1"
+          },
+          "name": "twx-dt-target",
+          "children": [{
+            "attributes": {
+              "databind-id": "db-1485803192991",
+              "source-type": "data",
+              "source-name": "vumark",
+              "source-item-type": "value",
+              "source-item-name": "vumark",
+              "binding-type": "custom_field",
+              "from-expression": "app.params['vumark']",
+              "to-property": "markerId"
+            },
+            "name": "twx-databind"
+          }]
+        }, {
+          "attributes": {
+            "twx-widget": "",
+            "widget-id": "fan1RpmGauge",
+            "src": "Default/vu_gauge1.svg",
+            "scale": "0.3",
+            "x": "0.37",
+            "y": "0.45",
+            "z": "0.534",
+            "canvasheight": "600",
+            "canvaswidth": "600",
+            "billboard": "true",
+            "label": "Fan 1 RPM",
+            "max-value": "4000",
+            "unit": "",
+            "widget-name": "fan1RpmGauge"
+          },
+          "name": "tml-svg-gauge"
+        }, {
+          "attributes": {
+            "twx-widget": "",
+            "widget-id": "fan2RpmGauge",
+            "src": "Default/vu_gauge1.svg",
+            "scale": "0.3",
+            "x": "0.37",
+            "y": "0.45",
+            "z": "-0.108",
+            "canvasheight": "600",
+            "canvaswidth": "600",
+            "billboard": "true",
+            "label": "Fan 2 RPM",
+            "max-value": "4000",
+            "unit": "",
+            "widget-name": "fan2RpmGauge"
+          },
+          "name": "tml-svg-gauge"
+        }, {
+          "attributes": {
+            "twx-widget": "",
+            "widget-id": "fan1AccelBar",
+            "src": "Default/vu_gauge1.svg",
+            "scale": "0.5",
+            "x": "0.473",
+            "y": "0.09",
+            "z": "0.45",
+            "canvasheight": "140",
+            "canvaswidth": "810",
+            "billboard": "true",
+            "label": "Fan 1 Acceleration",
+            "max-value": "1000",
+            "unit": "",
+            "widget-name": "fan1AccelBar"
+          },
+          "name": "tml-svg-bar"
+        }, {
+          "attributes": {
+            "twx-widget": "",
+            "widget-id": "fan2AccelBar",
+            "src": "Default/vu_gauge1.svg",
+            "scale": "0.5",
+            "x": "0.473",
+            "y": "0.09",
+            "z": "-0.13",
+            "canvasheight": "140",
+            "canvaswidth": "810",
+            "billboard": "true",
+            "label": "Fan 2 Acceleration",
+            "max-value": "1000",
+            "unit": "",
+            "widget-name": "fan2AccelBar"
+          },
+          "name": "tml-svg-bar"
+        }, {
+          "attributes": {
+            "twx-widget": "",
+            "widget-id": "fan1StartButton",
+            "model": "model-1",
+            "idpath": "/6/201",
+            "scale": "1.0000",
+            "x": "-0.1200",
+            "y": "0.0250",
+            "z": "0.1731",
+            "rx": "90.00",
+            "ry": "-0.00",
+            "rz": "-45",
+            "widget-name": "fan1StartButton"
+          },
+          "name": "twx-dt-modelitem"
+        }, {
+          "attributes": {
+            "twx-widget": "",
+            "widget-id": "fan2StartButton",
+            "model": "model-1",
+            "idpath": "/6/95",
+            "scale": "1.0000",
+            "x": "0.1900",
+            "y": "0.0250",
+            "z": "0.1731",
+            "rx": "90.00",
+            "ry": "-0.00",
+            "rz": "-0.00",
+            "widget-name": "fan2StartButton"
+          },
+          "name": "twx-dt-modelitem"
+        }]
+      }]
+    }, {
+      "attributes": {
+        "twx-widget": "",
+        "widget-id": "2DOverlay-1",
+        "widget-name": "2D Overlay",
+        "is-widget-container": "true"
+      },
+      "name": "twx-overlay",
+      "children": [{
+        "name": "twx-container-content",
+        "children": [{
+          "attributes": {
+            "twx-widget": "",
+            "widget-id": "panel-1",
+            "position": "top",
+            "widget-name": "Top Panel",
+            "is-widget-container": "true"
+          },
+          "name": "twx-overlay-container",
+          "children": [{
+            "name": "twx-container-content",
+            "children": [{
+              "attributes": {
+                "twx-widget": "",
+                "widget-id": "BSCTopPanel",
+                "widget-name": "BSCTopPanel",
+                "is-widget-container": "true"
+              },
+              "name": "twx-view-header",
+              "children": [{
+                "name": "twx-container-content",
+                "children": [{
+                  "attributes": {
+                    "twx-widget": "",
+                    "widget-id": "card-1",
+                    "widget-name": "card-1",
+                    "is-widget-container": "true",
+                    "class": "BSCTopCard"
+                  },
+                  "name": "twx-card",
+                  "children": [{
+                    "name": "twx-container-content",
+                    "children": [{
+                      "attributes": {
+                        "twx-widget": "",
+                        "widget-id": "label-3",
+                        "text": "Dual Fan installation 123A",
+                        "state-format-value": "text",
+                        "widget-name": "label-3",
+                        "class": "simple-label BSCMachineNameLabel"
+                      },
+                      "name": "twx-label"
+                    }, {
+                      "attributes": {
+                        "twx-widget": "",
+                        "widget-id": "card-2",
+                        "widget-name": "card-2",
+                        "is-widget-container": "true",
+                        "class": "BSCTopDarkArea"
+                      },
+                      "name": "twx-card",
+                      "children": [{
+                        "name": "twx-container-content",
+                        "children": [{
+                          "attributes": {
+                            "twx-widget": "",
+                            "widget-id": "label-4",
+                            "text": "Serial No   301289308",
+                            "state-format-value": "text",
+                            "widget-name": "label-4",
+                            "class": "simple-label BSCGreenLabel BSCSerialNumber"
+                          },
+                          "name": "twx-label"
+                        }, {
+                          "attributes": {
+                            "twx-widget": "",
+                            "widget-id": "label-5",
+                            "text": "Site: PTC Plant A",
+                            "state-format-value": "text",
+                            "widget-name": "label-5",
+                            "class": "simple-label BSCGreenLabel BSCSiteName"
+                          },
+                          "name": "twx-label"
+                        }]
+                      }]
+                    }, {
+                      "attributes": {
+                        "twx-widget": "",
+                        "widget-id": "card-3",
+                        "widget-name": "card-3",
+                        "is-widget-container": "true",
+                        "class": "BSCTopTriangle"
+                      },
+                      "name": "twx-card",
+                      "children": [{
+                        "name": "twx-container-content"
+                      }]
+                    }]
+                  }]
+                }]
+              }]
+            }, {
+              "attributes": {
+                "twx-widget": "",
+                "widget-id": "header-1",
+                "widget-name": "header-1",
+                "is-widget-container": "true"
+              },
+              "name": "twx-view-header",
+              "children": [{
+                "name": "twx-container-content",
+                "children": [{
+                  "attributes": {
+                    "twx-widget": "",
+                    "widget-id": "headerButtons-1",
+                    "align": "primary",
+                    "widget-name": "headerButtons-1",
+                    "is-widget-container": "true"
+                  },
+                  "name": "twx-header-buttons",
+                  "children": [{
+                    "name": "twx-container-content",
+                    "children": [{
+                      "attributes": {
+                        "twx-widget": "",
+                        "widget-id": "resourceImage-2",
+                        "imgsrc": "Uploaded/thingworx-color.png",
+                        "width": "123p",
+                        "height": "33px",
+                        "widget-name": "resourceImage-2"
+                      },
+                      "name": "twx-image2"
+                    }]
+                  }]
+                }, {
+                  "attributes": {
+                    "twx-widget": "",
+                    "widget-id": "headerTitle-1",
+                    "widget-name": "headerTitle-1",
+                    "is-widget-container": "true"
+                  },
+                  "name": "twx-header-title",
+                  "children": [{
+                    "name": "twx-container-content",
+                    "children": [{
+                      "attributes": {
+                        "twx-widget": "",
+                        "widget-id": "label-1",
+                        "text": "Conditional Monitoring",
+                        "state-format-value": "text",
+                        "widget-name": "label-1"
+                      },
+                      "name": "twx-label"
+                    }]
+                  }]
+                }, {
+                  "attributes": {
+                    "twx-widget": "",
+                    "widget-id": "headerButtons-2",
+                    "align": "secondary",
+                    "widget-name": "headerButtons-2",
+                    "is-widget-container": "true"
+                  },
+                  "name": "twx-header-buttons",
+                  "children": [{
+                    "name": "twx-container-content",
+                    "children": [{
+                      "attributes": {
+                        "twx-widget": "",
+                        "widget-id": "resourceImage-1",
+                        "imgsrc": "Uploaded/HPE-Green-Logo.jpg",
+                        "width": "200px",
+                        "height": "31px",
+                        "padding": "3px 0 0 0",
+                        "widget-name": "resourceImage-1"
+                      },
+                      "name": "twx-image2"
+                    }]
+                  }]
+                }]
+              }]
+            }]
+          }]
+        }, {
+          "attributes": {
+            "twx-widget": "",
+            "widget-id": "2DOverlayBody-1",
+            "widget-name": "2D Body",
+            "is-widget-container": "true"
+          },
+          "name": "twx-overlay-body",
+          "children": [{
+            "name": "twx-container-content",
+            "children": [{
+              "attributes": {
+                "twx-widget": "",
+                "widget-id": "panel-2",
+                "position": "left",
+                "width": "33vw",
+                "widget-name": "Left Panel",
+                "is-widget-container": "true",
+                "class": "BSCLeftPanel"
+              },
+              "name": "twx-overlay-container",
+              "children": [{
+                "name": "twx-container-content",
+                "children": [{
+                  "attributes": {
+                    "twx-widget": "",
+                    "widget-id": "propertyDisplayCard",
+                    "visible": "false",
+                    "widget-name": "propertyDisplayCard",
+                    "is-widget-container": "true",
+                    "class": "BSCPropertyDisplayCard"
+                  },
+                  "name": "twx-card",
+                  "children": [{
+                    "name": "twx-container-content",
+                    "children": [{
+                      "attributes": {
+                        "twx-widget": "",
+                        "widget-id": "valueDisplay-1",
+                        "state-format-value": "value",
+                        "label": "Fan 1 Acceleration X",
+                        "widget-name": "valueDisplay-1",
+                        "class": "simple-label BSCNoBackground BSCValueDisplay"
+                      },
+                      "name": "twx-valuedisplay"
+                    }, {
+                      "attributes": {
+                        "twx-widget": "",
+                        "widget-id": "valueDisplay-2",
+                        "state-format-value": "value",
+                        "label": "Fan 1 Acceleration Y",
+                        "widget-name": "valueDisplay-2",
+                        "class": "simple-label BSCNoBackground BSCValueDisplay"
+                      },
+                      "name": "twx-valuedisplay"
+                    }, {
+                      "attributes": {
+                        "twx-widget": "",
+                        "widget-id": "valueDisplay-3",
+                        "state-format-value": "value",
+                        "label": "Fan 1 Acceleration RPM",
+                        "widget-name": "valueDisplay-3",
+                        "class": "simple-label BSCNoBackground BSCValueDisplay"
+                      },
+                      "name": "twx-valuedisplay"
+                    }]
+                  }]
+                }]
+              }]
+            }, {
+              "attributes": {
+                "twx-widget": "",
+                "widget-id": "panel-3",
+                "position": "center",
+                "widget-name": "Center Panel",
+                "is-widget-container": "true"
+              },
+              "name": "twx-overlay-container",
+              "children": [{
+                "name": "twx-container-content"
+              }]
+            }, {
+              "attributes": {
+                "twx-widget": "",
+                "widget-id": "panel-4",
+                "position": "right",
+                "widget-name": "Right Panel",
+                "is-widget-container": "true"
+              },
+              "name": "twx-overlay-container",
+              "children": [{
+                "name": "twx-container-content"
+              }]
+            }]
+          }]
+        }, {
+          "attributes": {
+            "twx-widget": "",
+            "widget-id": "panel-5",
+            "position": "bottom",
+            "widget-name": "Bottom Panel",
+            "is-widget-container": "true",
+            "class": "BSCBottomPanel"
+          },
+          "name": "twx-overlay-container",
+          "children": [{
+            "name": "twx-container-content",
+            "children": [{
+              "attributes": {
+                "twx-widget": "",
+                "widget-id": "footer-1",
+                "widget-name": "footer-1",
+                "is-widget-container": "true",
+                "class": "BSCBottomPanel"
+              },
+              "name": "twx-view-footer",
+              "children": [{
+                "name": "twx-container-content",
+                "children": [{
+                  "attributes": {
+                    "twx-widget": "",
+                    "widget-id": "button-1",
+                    "text": "",
+                    "widget-name": "button-1",
+                    "click-expression": "togglePanelVisibility()",
+                    "class": "BSCBottomButton BSCHelpButton"
+                  },
+                  "name": "twx-button"
+                }, {
+                  "attributes": {
+                    "twx-widget": "",
+                    "widget-id": "button-2",
+                    "text": "",
+                    "widget-name": "button-2",
+                    "click-expression": "showModel()",
+                    "class": "BSCBottomButton BSCPlayButton"
+                  },
+                  "name": "twx-button"
+                }, {
+                  "attributes": {
+                    "twx-widget": "",
+                    "widget-id": "slider-1",
+                    "max": "360",
+                    "value": "90",
+                    "iconleft": "",
+                    "iconright": "",
+                    "widget-name": "slider-1",
+                    "class": "BSCSlider1"
+                  },
+                  "name": "twx-range"
+                }, {
+                  "attributes": {
+                    "twx-widget": "",
+                    "widget-id": "slider-2",
+                    "min": "0.2",
+                    "max": "5",
+                    "step": "0.1",
+                    "value": "1",
+                    "iconleft": "",
+                    "iconright": "",
+                    "widget-name": "slider-2",
+                    "class": "BSCSlider2"
+                  },
+                  "name": "twx-range"
+                }, {
+                  "attributes": {
+                    "twx-widget": "",
+                    "widget-id": "hyperlink-1",
+                    "text": "",
+                    "widget-name": "hyperlink-1",
+                    "class": "BSCBottomButton BSCHomeButton"
+                  },
+                  "name": "twx-hyperlink"
+                }]
+              }]
+            }]
+          }]
+        }]
+      }]
+    }]
+  }, {
+    "name": "twx-view-data"
+  }],
+  "name": "twx-view"
+}

@@ -6,16 +6,16 @@
   ],
   "experiences": [
     {
-      "vumark": "526:20",
+      "vumark": "1149:49",
       "index-keys": [
-        "urn:vuforia:vumark:526:20"
+        "urn:vuforia:vumark:1149:49"
       ],
       "title": {
-        "en": "Fan Demo 2"
+        "en": "StarterKit Demo"
       },
       "description": {
-        "en": "",
-        "en-US": ""
+        "en": "Example of a AR demo",
+        "en-US": "Example of a AR demo"
       },
       "requires": [
         "AR-tracking"

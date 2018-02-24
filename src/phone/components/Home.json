@@ -265,7 +265,7 @@
                             "text": "Serial No   301289308",
                             "state-format-value": "text",
                             "widget-name": "label-4",
-                            "class": "simple-label BSCGreenLabel BSCSerialNumber"
+                            "class": "simple-label BSCColoredLabel BSCSerialNumber"
                           },
                           "name": "twx-label"
                         }, {
@@ -275,7 +275,7 @@
                             "text": "Site: PTC Plant A",
                             "state-format-value": "text",
                             "widget-name": "label-5",
-                            "class": "simple-label BSCGreenLabel BSCSiteName"
+                            "class": "simple-label BSCColoredLabel BSCSiteName"
                           },
                           "name": "twx-label"
                         }]
@@ -499,58 +499,153 @@
                 "children": [{
                   "attributes": {
                     "twx-widget": "",
-                    "widget-id": "button-1",
-                    "text": "",
-                    "widget-name": "button-1",
-                    "click-expression": "togglePanelVisibility()",
-                    "class": "BSCBottomButton BSCHelpButton"
+                    "widget-id": "gridLayout-1",
+                    "widget-name": "gridLayout-1",
+                    "is-widget-container": "true"
                   },
-                  "name": "twx-button"
-                }, {
-                  "attributes": {
-                    "twx-widget": "",
-                    "widget-id": "button-2",
-                    "text": "",
-                    "widget-name": "button-2",
-                    "click-expression": "showModel()",
-                    "class": "BSCBottomButton BSCPlayButton"
-                  },
-                  "name": "twx-button"
-                }, {
-                  "attributes": {
-                    "twx-widget": "",
-                    "widget-id": "slider-1",
-                    "max": "360",
-                    "value": "90",
-                    "iconleft": "",
-                    "iconright": "",
-                    "widget-name": "slider-1",
-                    "class": "BSCSlider1"
-                  },
-                  "name": "twx-range"
-                }, {
-                  "attributes": {
-                    "twx-widget": "",
-                    "widget-id": "slider-2",
-                    "min": "0.2",
-                    "max": "5",
-                    "step": "0.1",
-                    "value": "1",
-                    "iconleft": "",
-                    "iconright": "",
-                    "widget-name": "slider-2",
-                    "class": "BSCSlider2"
-                  },
-                  "name": "twx-range"
-                }, {
-                  "attributes": {
-                    "twx-widget": "",
-                    "widget-id": "hyperlink-1",
-                    "text": "",
-                    "widget-name": "hyperlink-1",
-                    "class": "BSCBottomButton BSCHomeButton"
-                  },
-                  "name": "twx-hyperlink"
+                  "name": "twx-gridlayout",
+                  "children": [{
+                    "name": "twx-container-content",
+                    "children": [{
+                      "attributes": {
+                        "twx-widget": "",
+                        "widget-id": "row-1",
+                        "rowheight": "44",
+                        "widget-name": "row-1",
+                        "is-widget-container": "true"
+                      },
+                      "name": "twx-row",
+                      "children": [{
+                        "name": "twx-container-content",
+                        "children": [{
+                          "attributes": {
+                            "twx-widget": "",
+                            "widget-id": "column-1",
+                            "justification": "center",
+                            "alignment": "center",
+                            "widget-name": "column-1",
+                            "is-widget-container": "true"
+                          },
+                          "name": "twx-col",
+                          "children": [{
+                            "name": "twx-container-content",
+                            "children": [{
+                              "attributes": {
+                                "twx-widget": "",
+                                "widget-id": "button-1",
+                                "text": "",
+                                "widget-name": "button-1",
+                                "click-expression": "togglePanelVisibility()",
+                                "class": "BSCBottomButton ion-ios-information-outline"
+                              },
+                              "name": "twx-button"
+                            }]
+                          }]
+                        }, {
+                          "attributes": {
+                            "twx-widget": "",
+                            "widget-id": "column-2",
+                            "justification": "center",
+                            "fixedcolsize": "calc(50vw - 66px - 66px)",
+                            "widget-name": "column-2",
+                            "is-widget-container": "true"
+                          },
+                          "name": "twx-col",
+                          "children": [{
+                            "name": "twx-container-content",
+                            "children": [{
+                              "attributes": {
+                                "twx-widget": "",
+                                "widget-id": "slider-1",
+                                "max": "360",
+                                "value": "90",
+                                "iconleft": "",
+                                "iconright": "",
+                                "widget-name": "slider-1",
+                                "class": "BSCSlider"
+                              },
+                              "name": "twx-range"
+                            }]
+                          }]
+                        }, {
+                          "attributes": {
+                            "twx-widget": "",
+                            "widget-id": "column-3",
+                            "justification": "center",
+                            "alignment": "center",
+                            "widget-name": "column-3",
+                            "is-widget-container": "true"
+                          },
+                          "name": "twx-col",
+                          "children": [{
+                            "name": "twx-container-content",
+                            "children": [{
+                              "attributes": {
+                                "twx-widget": "",
+                                "widget-id": "button-2",
+                                "text": "",
+                                "widget-name": "button-2",
+                                "click-expression": "showModel()",
+                                "class": "BSCBottomButton ion-play"
+                              },
+                              "name": "twx-button"
+                            }]
+                          }]
+                        }, {
+                          "attributes": {
+                            "twx-widget": "",
+                            "widget-id": "column-4",
+                            "justification": "center",
+                            "fixedcolsize": "calc(50vw - 66px - 66px)",
+                            "widget-name": "column-4",
+                            "is-widget-container": "true"
+                          },
+                          "name": "twx-col",
+                          "children": [{
+                            "name": "twx-container-content",
+                            "children": [{
+                              "attributes": {
+                                "twx-widget": "",
+                                "widget-id": "slider-2",
+                                "min": "0.2",
+                                "max": "5",
+                                "step": "0.1",
+                                "value": "1",
+                                "iconleft": "",
+                                "iconright": "",
+                                "widget-name": "slider-2",
+                                "class": "BSCSlider"
+                              },
+                              "name": "twx-range"
+                            }]
+                          }]
+                        }, {
+                          "attributes": {
+                            "twx-widget": "",
+                            "widget-id": "column-5",
+                            "justification": "center",
+                            "alignment": "center",
+                            "widget-name": "column-5",
+                            "is-widget-container": "true"
+                          },
+                          "name": "twx-col",
+                          "children": [{
+                            "name": "twx-container-content",
+                            "children": [{
+                              "attributes": {
+                                "twx-widget": "",
+                                "widget-id": "hyperlink-1",
+                                "text": "",
+                                "widget-name": "hyperlink-1",
+                                "class": "BSCBottomButton ion-ios-home-outline"
+                              },
+                              "name": "twx-hyperlink"
+                            }]
+                          }]
+                        }]
+                      }]
+                    }]
+                  }]
                 }]
               }]
             }]

@@ -241,7 +241,7 @@
                       "attributes": {
                         "twx-widget": "",
                         "widget-id": "label-3",
-                        "text": "Dual Fan installation 123A",
+                        "text": "Sample Equipment Name",
                         "state-format-value": "text",
                         "widget-name": "label-3",
                         "class": "simple-label BSCMachineNameLabel"
@@ -343,7 +343,7 @@
                       "attributes": {
                         "twx-widget": "",
                         "widget-id": "label-1",
-                        "text": "Conditional Monitoring",
+                        "text": "Sample experience Title",
                         "state-format-value": "text",
                         "widget-name": "label-1"
                       },

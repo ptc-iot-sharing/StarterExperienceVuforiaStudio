@@ -15,6 +15,8 @@
 */
 
 $primary-color: #6ac141;
+$top-dark-color: #3b4547;
+$top-border-color: #c3c5c5;
 
 .left-buttons {
     position: absolute;
@@ -33,12 +35,12 @@ $primary-color: #6ac141;
     font-size: 13px;
     line-height: 16px;
     text-align: center;
-    color: #c3c5c5;
+    color: $top-border-color;
 }
 
 .BSCBottomPanel {
     background: linear-gradient(to bottom, white 0%, #dfe3e3 100%) !important;
-    border-top: 1px solid #c3c5c5 !important;
+    border-top: 1px solid $top-border-color !important;
     height: 44px;
     padding: 0;
 }
@@ -46,14 +48,14 @@ $primary-color: #6ac141;
 .BSCTopPanel {
     width: 100% !important;
     background: linear-gradient(to bottom, white 0%, #dfe3e3 100%) !important;
-    border-bottom: 1px solid #c3c5c5 !important;
+    border-bottom: 1px solid $top-border-color !important;
     overflow: hidden !important;
 }
 
 .BSCTopCard {
     width: 100vw !important;
     background: linear-gradient(to bottom, white 0%, #dfe3e3 100%) !important;
-    border-bottom: 1px solid #c3c5c5 !important;
+    border-bottom: 1px solid $top-border-color !important;
     box-shadow: none !important;
     border-radius: 0 !important;
     height: 44px !important;
@@ -61,7 +63,7 @@ $primary-color: #6ac141;
 }
 
 .BSCTopDarkArea {
-    background: #3b4547 !important;
+    background: $top-dark-color !important;
     width: 60vw !important;
     height: 44px !important;
     position: absolute;
@@ -78,7 +80,7 @@ $primary-color: #6ac141;
     min-height: 0px !important;
     border-style: solid;
     border-width: 0 0 44px 88px;
-    border-color: transparent transparent #3b4547 transparent;
+    border-color: transparent transparent  $top-dark-color transparent;
     position: absolute;
     left: calc(40vw - 88px);
     top: 0px;

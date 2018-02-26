@@ -4,16 +4,9 @@ $scope.$on("$ionicView.afterEnter", function (event) {
     $ionicSideMenuDelegate.canDragContent(false);
 }
 );
-var niBoxModelItems = ['/6/97', '/6/21', '/6/205', '/6/55', '/6/209', '/6/200', '/6/141', '/6/39', '/6/153',
-    '/6/155', '/6/96', '/6/74', '/6/60', '/6/40', '/6/94', '/6/189', '/6/164', '/6/130', '/6/127'];
-var showNiBoxInAr = true;
-// update the bars when the value from twx changes
-$scope.$watch("app.mdl['TurbinesDemoThing'].svc['GetPropertyValues'].data.current['showNiBoxInAr']", function (newVal) {
-    if (newVal !== undefined) {
-        showNiBoxInAr = newVal;
-    }
-}
-);
+/** 
+ * Examples of some model items that we animate
+ */
 var fanModelItems = {
     fan1: {
         modelItem: "/6/132/7",
@@ -27,42 +20,6 @@ var fanModelItems = {
         alert: false
     }
 };
-// update the bars when the value from twx changes
-$scope.$watch("app.mdl['TurbinesDemoThing'].svc['GetPropertyValues'].data.current['Fan1YAccel'] + app.mdl['TurbinesDemoThing'].svc['GetPropertyValues'].data.current['Fan1XAccel']", function () {
-    if ($scope.app.mdl.TurbinesDemoThing)
-        $scope.view.wdg['fan1AccelBar'].value = Math.sqrt(Math.pow($scope.app.mdl['TurbinesDemoThing'].svc['GetPropertyValues'].data.current['Fan1YAccel'], 2) + Math.pow($scope.app.mdl['TurbinesDemoThing'].svc['GetPropertyValues'].data.current['Fan1XAccel'], 2)).toFixed(2);
-}
-);
-$scope.$watch("app.mdl['TurbinesDemoThing'].svc['GetPropertyValues'].data.current['Fan2YAccel'] + app.mdl['TurbinesDemoThing'].svc['GetPropertyValues'].data.current['Fan2XAccel']", function () {
-    if ($scope.app.mdl.TurbinesDemoThing)
-        $scope.view.wdg['fan2AccelBar'].value = Math.sqrt(Math.pow($scope.app.mdl['TurbinesDemoThing'].svc['GetPropertyValues'].data.current['Fan2XAccel'], 2) + Math.pow($scope.app.mdl['TurbinesDemoThing'].svc['GetPropertyValues'].data.current['Fan2YAccel'], 2)).toFixed(2);
-}
-);
-// handle the status of the fans
-$scope.$watch("app.mdl['TurbinesDemoThing'].svc['GetPropertyValues'].data.current['Fan1Running']", function (newVal) {
-    fanModelItems.fan1.spinning = newVal;
-    $scope.view.wdg['fan1StartButton'].rz = newVal ? -45 : 0;
-}
-);
-$scope.$watch("app.mdl['TurbinesDemoThing'].svc['GetPropertyValues'].data.current['Fan2Running']", function (newVal) {
-    fanModelItems.fan2.spinning = newVal;
-    $scope.view.wdg['fan2StartButton'].rz = newVal ? -45 : 0;
-}
-);
-$scope.$watch("app.mdl['TurbinesDemoThing'].svc['GetPropertyValues'].data.current['Fan1Anomaly']", function (newVal) {
-    fanModelItems.fan1.alert = newVal;
-    if (!newVal) {
-        tml3dRenderer.setColor("model-1-" + fanModelItems.fan1.modelItem, "rgba(127,127,127,1)");
-    }
-}
-);
-$scope.$watch("app.mdl['TurbinesDemoThing'].svc['GetPropertyValues'].data.current['Fan2Anomaly']", function (newVal) {
-    fanModelItems.fan2.alert = newVal;
-    if (!newVal) {
-        tml3dRenderer.setColor("model-1-" + fanModelItems.fan2.modelItem, "rgba(127,127,127,1)");
-    }
-}
-);
 // handle panel visibility
 $scope.togglePanelVisibility = function () {
     $scope.view.wdg["propertyDisplayCard"].visible = !$scope.view.wdg["propertyDisplayCard"].visible;
@@ -120,3 +77,101 @@ function animationFrame() {
     }
 }
 window.requestAnimationFrame(animationFrame);
+
+// intitialize simulator for the properties
+var Simple1DNoise = function () {
+    var MAX_VERTICES = 256;
+    var MAX_VERTICES_MASK = MAX_VERTICES - 1;
+    var amplitude = 1;
+    var scale = 1;
+    var offset = 0;
+    var x = 0;
+    var r = [];
+    for (var i = 0; i < MAX_VERTICES; ++i) {
+        r.push(Math.random());
+    }
+    var getVal = function () {
+        x++;
+        var scaledX = x * scale;
+        var xFloor = Math.floor(scaledX);
+        var t = scaledX - xFloor;
+        var tRemapSmoothstep = t * t * (3 - 2 * t);
+        /// Modulo using &
+        var xMin = xFloor & MAX_VERTICES_MASK;
+        var xMax = (xMin + 1) & MAX_VERTICES_MASK;
+        var y = lerp(r[xMin], r[xMax], tRemapSmoothstep);
+        return y * amplitude + offset;
+    };
+    /**
+      * Linear interpolation function.
+      * @param a The lower integer value
+      * @param b The upper integer value
+      * @param t The value between the two
+      * @returns {number}
+      */
+    var lerp = function (a, b, t) {
+        return a * (1 - t) + b * t;
+    };
+    // return the API
+    return {
+        getVal: getVal,
+        setAmplitude: function (newAmplitude) {
+            amplitude = newAmplitude;
+        },
+        setScale: function (newScale) {
+            scale = newScale;
+        },
+        setOffset: function (newOffset) {
+            offset = newOffset;
+        }
+    };
+};
+var temperatureSimulator = new Simple1DNoise();
+temperatureSimulator.setOffset(80);
+temperatureSimulator.setScale(0.1);
+temperatureSimulator.setAmplitude(30);
+var vibrationSimulator = new Simple1DNoise();
+vibrationSimulator.setOffset(10);
+vibrationSimulator.setAmplitude(3);
+var labelSimulator = new Simple1DNoise();
+labelSimulator.setOffset(3);
+labelSimulator.setAmplitude(6);
+var pressureSimulator = new Simple1DNoise();
+pressureSimulator.setOffset(20);
+pressureSimulator.setAmplitude(80);
+// create intervals for each of the simulated data.
+var simulatorInterval = $interval(
+    function () {
+        // here you can set the value of some widgets according to the simulators
+    }, 1000);
+$scope.$on('$destroy', function () {
+    // Make sure that the interval is destroyed too
+    if (angular.isDefined(simulatorInterval)) {
+        $interval.cancel(simulatorInterval);
+        simulatorInterval = undefined;
+    }
+});
+
+
+// called when the new step starts playing. The arg comes in this format: "currStep/totalSteps: Step description". For example "1/5: Remove the case". The step description comes directly from the PVI
+$scope.$on('newStep', function(evt,arg) {
+    //alert("new step: "+ arg); 
+     $scope.setWidgetProp("label-2", "text", arg);
+  
+  }
+            );
+  
+  $scope.$watch('view.wdg["model-2"].playing', function(val) {
+    // add or remove the playing class 
+    var buttonElement = angular.element(document.querySelector('twx-widget[widget-id="button-6"] button'));
+    if(val) {
+      $scope.view.wdg["label-2"].visible = true;
+      buttonElement.removeClass("ion-play");
+      buttonElement.addClass("ion-pause");
+    }
+    else {
+      $scope.view.wdg["label-2"].visible = false;
+      buttonElement.removeClass("ion-pause");
+      buttonElement.addClass("ion-play");
+    }
+  });

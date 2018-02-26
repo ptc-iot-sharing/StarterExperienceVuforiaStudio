@@ -244,7 +244,7 @@
                         "text": "Sample Equipment Name",
                         "state-format-value": "text",
                         "widget-name": "label-3",
-                        "class": "simple-label BSCMachineNameLabel"
+                        "class": "simple-label BSCMachineNameLabel BSCTopLabel"
                       },
                       "name": "twx-label"
                     }, {
@@ -265,7 +265,7 @@
                             "text": "Serial No   301289308",
                             "state-format-value": "text",
                             "widget-name": "label-4",
-                            "class": "simple-label BSCColoredLabel BSCSerialNumber"
+                            "class": "simple-label BSCColoredLabel BSCSerialNumber BSCTopLabel"
                           },
                           "name": "twx-label"
                         }, {
@@ -275,7 +275,7 @@
                             "text": "Site: PTC Plant A",
                             "state-format-value": "text",
                             "widget-name": "label-5",
-                            "class": "simple-label BSCColoredLabel BSCSiteName"
+                            "class": "simple-label BSCColoredLabel BSCSiteName BSCTopLabel"
                           },
                           "name": "twx-label"
                         }]
@@ -345,7 +345,8 @@
                         "widget-id": "label-1",
                         "text": "Sample experience Title",
                         "state-format-value": "text",
-                        "widget-name": "label-1"
+                        "widget-name": "label-1",
+                        "class": "simple-label BSCTitleLabel BSCTopLabel"
                       },
                       "name": "twx-label"
                     }]
@@ -510,7 +511,7 @@
                       "attributes": {
                         "twx-widget": "",
                         "widget-id": "row-1",
-                        "rowheight": "44",
+                        "rowheight": "44px; width: 100vw;",
                         "widget-name": "row-1",
                         "is-widget-container": "true"
                       },
@@ -524,7 +525,8 @@
                             "justification": "center",
                             "alignment": "center",
                             "widget-name": "column-1",
-                            "is-widget-container": "true"
+                            "is-widget-container": "true",
+                            "class": "BSCSmallColumn"
                           },
                           "name": "twx-col",
                           "children": [{
@@ -546,9 +548,9 @@
                             "twx-widget": "",
                             "widget-id": "column-2",
                             "justification": "center",
-                            "fixedcolsize": "calc(50vw - 66px - 66px)",
                             "widget-name": "column-2",
-                            "is-widget-container": "true"
+                            "is-widget-container": "true",
+                            "class": ""
                           },
                           "name": "twx-col",
                           "children": [{
@@ -574,7 +576,8 @@
                             "justification": "center",
                             "alignment": "center",
                             "widget-name": "column-3",
-                            "is-widget-container": "true"
+                            "is-widget-container": "true",
+                            "class": "BSCSmallColumn"
                           },
                           "name": "twx-col",
                           "children": [{
@@ -596,7 +599,6 @@
                             "twx-widget": "",
                             "widget-id": "column-4",
                             "justification": "center",
-                            "fixedcolsize": "calc(50vw - 66px - 66px)",
                             "widget-name": "column-4",
                             "is-widget-container": "true"
                           },
@@ -626,7 +628,8 @@
                             "justification": "center",
                             "alignment": "center",
                             "widget-name": "column-5",
-                            "is-widget-container": "true"
+                            "is-widget-container": "true",
+                            "class": "BSCSmallColumn"
                           },
                           "name": "twx-col",
                           "children": [{

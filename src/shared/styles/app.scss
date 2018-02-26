@@ -17,7 +17,6 @@
 $primary-color: #6ac141;
 $top-dark-color: #3b4547;
 $top-border-color: #c3c5c5;
-
 .left-buttons {
     position: absolute;
     display: none !important;
@@ -80,7 +79,7 @@ $top-border-color: #c3c5c5;
     min-height: 0px !important;
     border-style: solid;
     border-width: 0 0 44px 88px;
-    border-color: transparent transparent  $top-dark-color transparent;
+    border-color: transparent transparent $top-dark-color transparent;
     position: absolute;
     left: calc(40vw - 88px);
     top: 0px;
@@ -167,6 +166,11 @@ $top-border-color: #c3c5c5;
     border: 1px solid rgba(0, 0, 0, .2) !important;
 }
 
+.BSCSmallColumn {
+    flex-basis: 66px;
+    flex-grow: 0;
+}
+
 .BSCCardHeader {
     box-shadow: none;
     border-radius: 0;
@@ -174,7 +178,7 @@ $top-border-color: #c3c5c5;
     border-bottom: 1px solid rgba(0, 0, 0, .1)
 }
 
-.BSCTitle {
+.BSCTitleLabel {
     font-size: 18px;
 }
 
@@ -188,18 +192,49 @@ $top-border-color: #c3c5c5;
 }
 
 .BSCSlider {
-  background: none;
-  border: none;
+    background: none;
+    border: none;
 }
 
 .BSCSlider.range input {
-  margin: 0;
+    margin: 0;
 }
 
 .BSCSlider.range .icon {
-  min-width: 0;
+    min-width: 0;
 }
 
 .BSCValueDisplay {
     width: 100% !important;
+}
+
+
+/**
+* For phones
+*/
+
+@media screen and (max-width: 767px) {
+    .BSCSmallColumn {
+        flex-basis: 30px;
+        flex-grow: 0;
+    }
+    .BSCMachineNameLabel {
+      font-size: 16px;
+    } 
+    .BSCTopCard {
+      height: 40px !important;
+    }
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+    .BSCTopLabel {
+        display: none !important;
+    }
+    .BSCTitleLabel {
+        display: block !important;
+        color: $primary-color;
+        position: fixed;
+        top: 42px;
+        right: 15px;
+    }
 }

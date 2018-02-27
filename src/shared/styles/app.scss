@@ -208,6 +208,16 @@ $top-border-color: #c3c5c5;
     width: 100% !important;
 }
 
+.BSCARLabel {
+    font-size: 24px;
+    color: white;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, .5);
+    width: 100vw;
+    text-align: center;
+    position: fixed;
+    bottom: 64px;
+}
+
 
 /**
 * For phones
@@ -219,10 +229,10 @@ $top-border-color: #c3c5c5;
         flex-grow: 0;
     }
     .BSCMachineNameLabel {
-      font-size: 16px;
-    } 
+        font-size: 16px;
+    }
     .BSCTopCard {
-      height: 40px !important;
+        height: 40px !important;
     }
 }
 

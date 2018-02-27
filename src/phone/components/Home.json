@@ -23,12 +23,13 @@
           "attributes": {
             "twx-widget": "",
             "widget-id": "model-1",
-            "src": "Uploaded/shell.pvz",
+            "src": "Uploaded/Machine-complete-CV.pvz",
             "scale": "1.2500",
             "x": "0.2794",
             "y": "0.1880",
             "z": "0.1537",
             "ry": "90",
+            "sequence": "Uploaded/l-3D - Sequence-TWS.pvi",
             "widget-name": "model-1"
           },
           "name": "twx-dt-model",
@@ -489,6 +490,15 @@
             "children": [{
               "attributes": {
                 "twx-widget": "",
+                "widget-id": "stepDescriptionLabel",
+                "state-format-value": "text",
+                "widget-name": "stepDescriptionLabel",
+                "class": "simple-label BSCARLabel"
+              },
+              "name": "twx-label"
+            }, {
+              "attributes": {
+                "twx-widget": "",
                 "widget-id": "footer-1",
                 "widget-name": "footer-1",
                 "is-widget-container": "true",
@@ -534,9 +544,9 @@
                             "children": [{
                               "attributes": {
                                 "twx-widget": "",
-                                "widget-id": "button-1",
+                                "widget-id": "infoButton",
                                 "text": "",
-                                "widget-name": "button-1",
+                                "widget-name": "infoButton",
                                 "click-expression": "togglePanelVisibility()",
                                 "class": "BSCBottomButton ion-ios-information-outline"
                               },
@@ -558,12 +568,12 @@
                             "children": [{
                               "attributes": {
                                 "twx-widget": "",
-                                "widget-id": "slider-1",
+                                "widget-id": "modelRotationSlider",
                                 "max": "360",
                                 "value": "90",
                                 "iconleft": "",
                                 "iconright": "",
-                                "widget-name": "slider-1",
+                                "widget-name": "modelRotationSlider",
                                 "class": "BSCSlider"
                               },
                               "name": "twx-range"
@@ -585,13 +595,26 @@
                             "children": [{
                               "attributes": {
                                 "twx-widget": "",
-                                "widget-id": "button-2",
+                                "widget-id": "sequencePlayButton",
                                 "text": "",
-                                "widget-name": "button-2",
-                                "click-expression": "showModel()",
+                                "widget-name": "sequencePlayButton",
                                 "class": "BSCBottomButton ion-play"
                               },
-                              "name": "twx-button"
+                              "name": "twx-button",
+                              "children": [{
+                                "attributes": {
+                                  "eventbind-id": "eb-1519644558564",
+                                  "src-type": "widget",
+                                  "src-label": "Button",
+                                  "src-name": "sequencePlayButton",
+                                  "src-event": "click",
+                                  "handler-type": "ui",
+                                  "handler-name": "model-1",
+                                  "handler-service": "play",
+                                  "handler": "app.view[\"Home\"].wdg[\"model-1\"].svc.play"
+                                },
+                                "name": "twx-eventbind"
+                              }]
                             }]
                           }]
                         }, {
@@ -608,14 +631,14 @@
                             "children": [{
                               "attributes": {
                                 "twx-widget": "",
-                                "widget-id": "slider-2",
+                                "widget-id": "modelScaleSlider",
                                 "min": "0.2",
                                 "max": "5",
                                 "step": "0.1",
                                 "value": "1",
                                 "iconleft": "",
                                 "iconright": "",
-                                "widget-name": "slider-2",
+                                "widget-name": "modelScaleSlider",
                                 "class": "BSCSlider"
                               },
                               "name": "twx-range"

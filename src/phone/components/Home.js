@@ -1,11 +1,21 @@
 // $scope, $element, $attrs, $injector, $sce, $timeout, $http, $ionicPopup, and $ionicPopover services are available
+//#region initialization and configs
+// disable sliding to show or hide the side menu
 $scope.$on("$ionicView.afterEnter", function (event) {
     var $ionicSideMenuDelegate = $injector.get("$ionicSideMenuDelegate");
     $ionicSideMenuDelegate.canDragContent(false);
+});
+// toggle the visibility of the property display table
+$scope.togglePanelVisibility = function () {
+    $scope.view.wdg["propertyDisplayCard"].visible = !$scope.view.wdg["propertyDisplayCard"].visible;
 }
-);
+//#endregion
+//#region Javascript driven animations
 /** 
- * Examples of some model items that we animate
+ * ANIMATION SECTION
+ * 
+ * In here we spin or highlight a model item accoring to the object fanModelItems.
+ * You could drive this json using data from thingworx
  */
 var fanModelItems = {
     fan1: {
@@ -20,10 +30,7 @@ var fanModelItems = {
         alert: false
     }
 };
-// handle panel visibility
-$scope.togglePanelVisibility = function () {
-    $scope.view.wdg["propertyDisplayCard"].visible = !$scope.view.wdg["propertyDisplayCard"].visible;
-}
+
 /**
  * The color stops for the animation.
  */
@@ -58,12 +65,6 @@ function animationFrame() {
     var fraction = animationStep > 1 ?
         (2 - animationStep) :
         (animationStep);
-    if (showNiBoxInAr !== undefined) {
-        for (let index = 0; index < niBoxModelItems.length; index++) {
-            const element = niBoxModelItems[index];
-            tml3dRenderer.setProperties('model-1-' + element, { hidden: !showNiBoxInAr });
-        }
-    }
     for (const key in fanModelItems) {
         if (fanModelItems.hasOwnProperty(key)) {
             var identifier = "model-1-" + fanModelItems[key].modelItem;
@@ -77,8 +78,16 @@ function animationFrame() {
     }
 }
 window.requestAnimationFrame(animationFrame);
-
-// intitialize simulator for the properties
+/**
+ * END ANIMATION SECTION
+ */
+//#endregion
+//#region Values simulator section
+/**
+ * SIMULATOR SECTION
+ * 
+ * Can be used to generate nicely looking random values 
+ */
 var Simple1DNoise = function () {
     var MAX_VERTICES = 256;
     var MAX_VERTICES_MASK = MAX_VERTICES - 1;
@@ -151,27 +160,35 @@ $scope.$on('$destroy', function () {
         simulatorInterval = undefined;
     }
 });
-
-
+//#endregion
+//#region Model sequence step text tracking
+/**
+ * SEQUENCE Tracking
+ * 
+ * This section covers getting the step names out of the pvz file
+ * For external step names, localization and pause play options, see:
+ * http://roicentersvn/placatus/DHollandia_Solutrans_Studio/src/branch/master/src/phone/components/Home.js
+ */
 // called when the new step starts playing. The arg comes in this format: "currStep/totalSteps: Step description". For example "1/5: Remove the case". The step description comes directly from the PVI
-$scope.$on('newStep', function(evt,arg) {
+$scope.$on('newStep', function (evt, arg) {
     //alert("new step: "+ arg); 
-     $scope.setWidgetProp("label-2", "text", arg);
-  
-  }
-            );
-  
-  $scope.$watch('view.wdg["model-2"].playing', function(val) {
+    $scope.setWidgetProp("stepDescriptionLabel", "text", arg);
+
+}
+);
+
+$scope.$watch('view.wdg["model-1"].playing', function (val) {
     // add or remove the playing class 
-    var buttonElement = angular.element(document.querySelector('twx-widget[widget-id="button-6"] button'));
-    if(val) {
-      $scope.view.wdg["label-2"].visible = true;
-      buttonElement.removeClass("ion-play");
-      buttonElement.addClass("ion-pause");
+    var buttonElement = angular.element(document.querySelector('twx-widget[widget-id="sequencePlayButton"] button'));
+    if (val) {
+        $scope.view.wdg["stepDescriptionLabel"].visible = true;
+        buttonElement.removeClass("ion-play");
+        buttonElement.addClass("ion-pause");
     }
     else {
-      $scope.view.wdg["label-2"].visible = false;
-      buttonElement.removeClass("ion-pause");
-      buttonElement.addClass("ion-play");
+        $scope.view.wdg["stepDescriptionLabel"].visible = false;
+        buttonElement.removeClass("ion-pause");
+        buttonElement.addClass("ion-play");
     }
-  });
+});
+//#endregion

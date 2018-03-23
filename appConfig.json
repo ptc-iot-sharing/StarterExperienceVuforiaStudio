@@ -9,7 +9,7 @@
   "theme": "twx-light",
   "hideExperienceHeader": false,
   "resourceDirectory": "src/phone/resources",
-  "version": "1.22.941",
+  "version": "1.23.1015",
   "device": {
     "name": "tablet",
     "width": "1026px",
@@ -45,7 +45,8 @@
           "fileName": "App",
           "fileExt": "scss"
         }
-      ]
+      ],
+      "fragments": []
     }
   },
   "previewUrl": "http://localhost:3000/preview.html?project=${project}&format=${format}&orientation=${orientation}&phone=true",

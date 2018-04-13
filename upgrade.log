@@ -246,3 +246,43 @@
 2018-03-23T06:32:46.083Z - debug: [twx-studio:upgrade:StarterExperience] buildApp
 2018-03-23T06:32:46.387Z - debug: [twx-studio:upgrade:StarterExperience] END buildApp StarterExperience_1521786762620
 2018-03-23T06:32:46.387Z - debug: [twx-studio:upgrade:StarterExperience] Build succeeded.
+2018-04-13T06:15:43.084Z - debug: [twx-studio:upgrade:StarterExperience] Begin upgrade of project StarterExperience
+2018-04-13T06:15:43.084Z - info: [twx-studio:upgrade:StarterExperience] Upgrading project StarterExperience C:\Users\placatus\Documents\ThingWorxStudio\Projects\StarterExperience from 8.2.2.3099 (1.23.1015) to 8.2.2.3099 (1.24.1079)
+2018-04-13T06:15:43.086Z - debug: [twx-studio:upgrade:StarterExperience] Make sure there are not any stale files lying around
+2018-04-13T06:15:43.087Z - debug: [twx-studio:upgrade:StarterExperience] Removing  C:\Users\placatus\Documents\ThingWorxStudio\Projects\StarterExperience/css/
+2018-04-13T06:15:43.096Z - debug: [twx-studio:upgrade:StarterExperience] Removing  C:\Users\placatus\Documents\ThingWorxStudio\Projects\StarterExperience/dist/
+2018-04-13T06:15:43.541Z - debug: [twx-studio:upgrade:StarterExperience] Removing  C:\Users\placatus\Documents\ThingWorxStudio\Projects\StarterExperience/extensions/
+2018-04-13T06:15:43.569Z - debug: [twx-studio:upgrade:StarterExperience] Removing  C:\Users\placatus\Documents\ThingWorxStudio\Projects\StarterExperience/src/phone/resources/Default/
+2018-04-13T06:15:43.629Z - debug: [twx-studio:upgrade:StarterExperience] Removing  C:\Users\placatus\Documents\ThingWorxStudio\Projects\StarterExperience/theme/
+2018-04-13T06:15:43.640Z - debug: [twx-studio:upgrade:StarterExperience] Merging  C:\Users\placatus\AppData\Roaming\ThingworxStudio\studio-download.vuforia.io\node_modules\ves-ar-extension\src\ar\.gitignore.template with C:\Users\placatus\Documents\ThingWorxStudio\Projects\StarterExperience\.gitignore
+2018-04-13T06:15:43.640Z - debug: [twx-studio:upgrade:StarterExperience] Original contents of C:\Users\placatus\Documents\ThingWorxStudio\Projects\StarterExperience\.gitignore
+#-- BEGIN OOTB GITIGNORE --#
+# Do not modify contents between BEGIN and END, it will be replaced on upgrade
+#-- ignore everything
+/*
+#-- unignore files that should be source controlled
+!.gitignore
+!appConfig.json
+!/src/
+!upgrade*.log
+#-- re-ignore default resources
+/src/phone/resources/Default/**
+#-- END OOTB GITIGNORE --#
+
+2018-04-13T06:15:43.642Z - debug: [twx-studio:upgrade:StarterExperience] Copying /src/**/* to project, overwrite=false
+2018-04-13T06:15:43.644Z - debug: [twx-studio:upgrade:StarterExperience] Copying /**/* to project, skip /src/**/*,  overwrite=true
+2018-04-13T06:15:43.780Z - debug: [twx-studio:upgrade:StarterExperience] Copy of project files complete
+2018-04-13T06:15:43.780Z - debug: [twx-studio:upgrade:StarterExperience] Updating version to  8.2.2.3099 (1.24.1079)
+2018-04-13T06:15:43.781Z - debug: [twx-studio:upgrade:StarterExperience] onupgrade sucessful, now build the project
+2018-04-13T06:15:43.781Z - debug: [twx-studio:upgrade:StarterExperience] BEGIN buildApp StarterExperience_1523600143781
+2018-04-13T06:15:43.781Z - debug: [twx-studio:upgrade:StarterExperience] write settings
+2018-04-13T06:15:43.783Z - debug: [twx-studio:upgrade:StarterExperience] copy runtime extensions
+2018-04-13T06:15:43.871Z - debug: [twx-studio:upgrade:StarterExperience] packageThemeSet
+2018-04-13T06:15:44.890Z - debug: [twx-studio:upgrade:StarterExperience] onBuild
+2018-04-13T06:15:44.890Z - info: [twx-studio:upgrade:StarterExperience] Building ves-ar-extension app: StarterExperience
+2018-04-13T06:15:44.899Z - debug: [twx-studio:upgrade:StarterExperience] pathDir C:\Users\placatus\Documents\ThingWorxStudio\Projects\StarterExperience
+2018-04-13T06:15:44.899Z - debug: [twx-studio:upgrade:StarterExperience] scaffoldDir C:\Users\placatus\AppData\Roaming\ThingworxStudio\studio-download.vuforia.io\node_modules\ves-ar-extension\src\src-scaffold
+2018-04-13T06:15:44.899Z - debug: [twx-studio:upgrade:StarterExperience] copySrc
+2018-04-13T06:15:45.418Z - debug: [twx-studio:upgrade:StarterExperience] buildApp
+2018-04-13T06:15:45.676Z - debug: [twx-studio:upgrade:StarterExperience] END buildApp StarterExperience_1523600143781
+2018-04-13T06:15:45.676Z - debug: [twx-studio:upgrade:StarterExperience] Build succeeded.

@@ -3,6 +3,7 @@
 #-- ignore everything
 /*
 #-- unignore files that should be source controlled
+!.gitattributes
 !.gitignore
 !appConfig.json
 !/src/

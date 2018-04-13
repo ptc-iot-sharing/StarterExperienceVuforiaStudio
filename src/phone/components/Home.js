@@ -138,7 +138,7 @@ var Simple1DNoise = function () {
 var temperatureSimulator = new Simple1DNoise();
 temperatureSimulator.setOffset(80);
 temperatureSimulator.setScale(0.1);
-temperatureSimulator.setAmplitude(30);
+temperatureSimulator.setAmplitude(500);
 var vibrationSimulator = new Simple1DNoise();
 vibrationSimulator.setOffset(10);
 vibrationSimulator.setAmplitude(3);
@@ -152,6 +152,14 @@ pressureSimulator.setAmplitude(80);
 var simulatorInterval = $interval(
     function () {
         // here you can set the value of some widgets according to the simulators
+      $scope.view.wdg["fan1AccelBar"].value = temperatureSimulator.getVal().toFixed(2);
+      $scope.view.wdg["fan2AccelBar"].value = temperatureSimulator.getVal().toFixed(2);
+      $scope.view.wdg["fan1RpmGauge"].value = vibrationSimulator.getVal().toFixed(2);
+      $scope.view.wdg["fan2RpmGauge"].value = pressureSimulator.getVal().toFixed(2);
+      $scope.view.wdg["valueDisplay-1"].value = labelSimulator.getVal().toFixed(2);
+      $scope.view.wdg["valueDisplay-2"].value = labelSimulator.getVal().toFixed(2);
+      $scope.view.wdg["valueDisplay-3"].value = labelSimulator.getVal().toFixed(2);
+      
     }, 1000);
 $scope.$on('$destroy', function () {
     // Make sure that the interval is destroyed too
